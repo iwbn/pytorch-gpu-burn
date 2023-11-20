@@ -17,7 +17,7 @@ torch._dynamo.config.suppress_errors = True
 
 model = models.vgg16().cuda()
 optimizer = torch.optim.SGD(model.parameters(), lr=0.0000001)
-compiled_model = torch.compile(model, mode="max-autotune")
+compiled_model = torch.compile(model)
 
 # test max memory size
 batch = 64
